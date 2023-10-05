@@ -1,0 +1,1 @@
+{"Modules":[{"Key":"","Source":"","Dir":"."},{"Key":"dynamodb-table","Source":"registry.terraform.io/terraform-aws-modules/dynamodb-table/aws","Version":"3.3.0","Dir":".terraform/modules/dynamodb-table"},{"Key":"dynamodb_table","Source":"registry.terraform.io/terraform-aws-modules/dynamodb-table/aws","Version":"3.3.0","Dir":".terraform/modules/dynamodb_table"}]}
