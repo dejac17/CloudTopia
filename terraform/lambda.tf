@@ -31,13 +31,18 @@ resource "aws_lambda_function" "photo_processor" {
   source_code_hash = data.archive_file.lambda.output_base64sha256
 
   runtime = "python3.11"
+}
 
-  environment {
-    variables = {
-      foo = "bar"
+resource "aws_lambda_function_event_invoke_config" "sns" {
+  function_name = aws_lambda_function.photo_processor.function_name
+
+  destination_config {
+    on_success {
+      destination = aws_sns_topic.valid_results.arn
     }
   }
 }
+
 
 resource "aws_iam_role_policy_attachment" "allow_get_object" {
   policy_arn = aws_iam_policy.get-object.arn

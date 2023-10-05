@@ -39,6 +39,15 @@ def lambda_handler(event, context):
     # Write Results to DynamoDB
     write_result_to_dynamo(face_evaluation_result, current_file_name, face_details)
 
+    # Pipe result using Lambda Destinations
+    publish_object = {
+        "FileName": current_file_name,
+        "ValidationResult": face_evaluation_result["result"],
+        "FailureReasons": json.dumps(face_evaluation_result["failure_reasons"]),
+        "FileLocation": BUCKET_NAME + "/" + current_file_name,
+    }
+    return {"statusCode": 200, "body": json.dumps(publish_object)}
+
 
 def write_result_to_dynamo(evaluation_result, file_name, face_details):
     # Set the item attributes
