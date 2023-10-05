@@ -25,3 +25,5 @@ function_name = aws_lambda_function.photo_processor.function_name
 principal = "s3.amazonaws.com"
 source_arn = "arn:aws:s3:::${aws_s3_bucket.photos.id}"
 }
+
+
