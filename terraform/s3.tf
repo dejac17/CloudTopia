@@ -1,8 +1,5 @@
 <<<<<<< HEAD
 resource "aws_s3_bucket" "photos" {
-=======
-resource "aws_s3_bucket" "example" {
->>>>>>> ae155c0c1bda87634b4d79c4b7d758d90035a2b2
   bucket = "cloud-topia-images"
 
   tags = {
