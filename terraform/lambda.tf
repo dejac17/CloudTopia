@@ -63,6 +63,7 @@ resource "aws_iam_policy" "get-object" {
           "rekognition:DetectFaces",
           "dynamodb:PutItem",
           "sns:Publish",
+          "dynamodb:GetItem",
         ]
         Effect   = "Allow"
         Resource = "*"

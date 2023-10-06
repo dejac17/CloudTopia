@@ -60,7 +60,7 @@ resource "aws_iam_role" "iam_for_lambda3" {
 }
 
 resource "aws_iam_role_policy_attachment" "allow_get-item" {
-  policy_arn = aws_iam_policy.get-object.arn
+  policy_arn = aws_iam_policy.get-item.arn
   role       = aws_iam_role.iam_for_lambda3.name
 }
 
